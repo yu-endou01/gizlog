@@ -5,35 +5,34 @@
 <div class="main-wrap">
   <div class="user-info-box clearfix">
     <div class="left-info">
-      <img src="{{ $userInfo->avatar }}"><p class="user-name">{{ $userInfo->name }}</p>
-      <i class="fa fa-envelope-o" aria-hidden="true"><p class="user-email">{{ $userInfo->email }}</p></i>
+      <img src="https://avatars.slack-edge.com/2019-01-25/532734044915_486bec3294a9f7b34291_192.png"><p class="user-name">Shohei Kanatani</p>
+      <i class="fa fa-envelope-o" aria-hidden="true"><p class="user-email">gizumo@test.com</p></i>
     </div>
     <div class="right-info">
       <div class="my-info absence-info">
         <p>欠席回数</p>
         <div class="study-hour-box clearfix">
           <div class="userinfo-box"><i class="fa fa-ban fa-2x" aria-hidden="true"></i></div>
-          <p class="study-hour"><span>{{ $absentLateCount['absentCount'] }}</span>回</p>
+          <p class="study-hour"><span>1</span>回</p>
         </div>
       </div>
       <div class="my-info day-info">
         <p>遅刻回数</p>
         <div class="study-hour-box clearfix">
           <div class="userinfo-box"><i class="fa fa-clock-o fa-2x" aria-hidden="true"></i></div>
-          <p class="study-hour"><span>{{ $absentLateCount['lateCount'] }}</span>回</p>
+          <p class="study-hour"><span>1</span>回</p>
         </div>
       </div>
       <div class="my-info">
         <p>研修開始日</p>
         <div class="study-hour-box clearfix">
-          <p class="study-hour study-date"><span>{{ $userInfo->created_at->format('Y/m/d') }}</span></p>
+          <p class="study-hour study-date"><span>2017/04/03</span></p>
         </div>
       </div>
     </div>
   </div>
-
   <div class="btn-wrapper">
-    <a href="{{ route('admin.attendance.user.create', $userInfo->id) }}" class="btn btn-icon">
+    <a href="" class="btn btn-icon">
       <i class="fa fa-plus" aria-hidden="true"></i>
     </a>
   </div>
@@ -51,46 +50,48 @@
         </tr>
       </thead>
       <tbody>
-        @foreach ($userInfo->allAttendance as $attendance)
-          @if (!empty($attendance))
-            <tr class="row {{ $attendance->absent_flg ? 'absent-row' : '' }}">
-              <td class="col-xs-1">{{ $attendance->date->format('m/d') }}</td>
-              <td class="col-xs-1">{{ $attendance->date->format('D') }}</td>
-              @if ($attendance->absent_flg)
-                <td class="col-xs-2">欠席</span></td>
-              @elseif ($attendance->date == Carbon::today() && empty($attendance->end_time))
-                <td class="col-xs-2">研修中</td>
-              @else
-                <td class="col-xs-2">出社</td>
-              @endif
-              @if (empty($attendance->start_time))
-                <td class="col-xs-2">-</td>
-              @else
-                <td class="col-xs-2">{{ $attendance->start_time->format('H:i') }}</td>
-              @endif
-              @if (empty($attendance->end_time))
-                <td class="col-xs-2">-</td>
-              @else
-                <td class="col-xs-2">{{ $attendance->end_time->format('H:i') }}</td>
-              @endif
-              @if (empty($attendance->request_content))
-                <td class="col-xs-2">-</td>
-              @else
-                <td class="col-xs-2"><span class="attention">あり</span></td>
-              @endif
-              <td class="col-xs-2">
-                <a href="{{ route('admin.attendance.user.edit', [$userInfo->id, $attendance->date->format('Y-m-d')]) }}" class="btn btn-sucssess btn-small">
-                  <i class="fa fa-pencil" aria-hidden="true"></i>
-                </a>
-              </td>
-            </tr>
-          @endif
-        @endforeach
+        <tr class="row absent-row">
+          <td class="col-xs-1">07/03</td>
+          <td class="col-xs-1">Wed</td>
+          <td class="col-xs-2">欠席</td>
+          <td class="col-xs-2">-</td>
+          <td class="col-xs-2">-</td>
+          <td class="col-xs-2">-</td>
+          <td class="col-xs-2">
+            <a href="" class="btn btn-sucssess btn-small">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+        <tr class="row ">
+          <td class="col-xs-1">07/02</td>
+          <td class="col-xs-1">Tue</td>
+          <td class="col-xs-2">出社</td>
+          <td class="col-xs-2">10:03</td>
+          <td class="col-xs-2">19:30</td>
+          <td class="col-xs-2"><span class="attention">あり</span></td>
+          <td class="col-xs-2">
+            <a href="" class="btn btn-sucssess btn-small">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
+        <tr class="row ">
+          <td class="col-xs-1">07/01</td>
+          <td class="col-xs-1">Mon</td>
+          <td class="col-xs-2">出社</td>
+          <td class="col-xs-2">09:29</td>
+          <td class="col-xs-2">19:58</td>
+          <td class="col-xs-2">-</td>
+          <td class="col-xs-2">
+            <a href="" class="btn btn-sucssess btn-small">
+              <i class="fa fa-pencil" aria-hidden="true"></i>
+            </a>
+          </td>
+        </tr>
       </tbody>
     </table>
   </div>
-
-
 </div>
 
 @endsection

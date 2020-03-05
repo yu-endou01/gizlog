@@ -4,18 +4,15 @@
 <h2 class="brand-header">修正申請</h2>
 <div class="main-wrap">
   <div class="container">
-    {!! Form::open(['route' => 'attendance.modify.store']) !!}
-      {!! Form::input('hidden', 'user_id', Auth::id() ) !!}
-      <div class="form-group form-size-small {{ $errors->has('date') ? 'has-error' : '' }}">
-        {!! Form::input('date', 'date', Carbon::now()->format('Y-m-d'), ['class' => 'form-control']) !!}
-        <span class="help-block">{{ $errors->first('date') }}</span>
+    <form>
+      <div class="form-group form-size-small">
+        <input class="form-control" name="" type="date" value="">
       </div>
-      <div class="form-group {{ $errors->has('request_content') ? 'has-error' : '' }}">
-        {!! Form::textarea('request_content', null, ['class' => 'form-control', 'placeholder' => '修正申請の内容を入力してください。']) !!}
-        <span class="help-block">{{ $errors->first('request_content') }}</span>
+      <div class="form-group">
+        <textarea class="form-control" placeholder="修正申請の内容を入力してください。" name="" cols="50" rows="10"></textarea>
       </div>
-      {!! Form::submit('submit', ['class' => 'btn btn-success pull-right']) !!}
-    {!! Form::close() !!}
+      <input class="btn btn-success pull-right" type="submit" value="申請">
+    </form>
   </div>
 </div>
 

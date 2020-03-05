@@ -10,7 +10,7 @@ class AdminUsersTableSeeder extends Seeder
         DB::table('admin_users')->insert([
             [
                 'name'         => 'gizumo-admin',
-                'password'     => bcrypt('gizumo0515'),
+                'password'     => bcrypt('gizumo1234'),
                 'user_info_id' => 2,
                 'privileges'   => 1,
             ]

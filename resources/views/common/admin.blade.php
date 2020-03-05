@@ -43,7 +43,7 @@
         <div class="nav navbar-nav navbar-right nav-user">
           <div class="dropdown">
             <a class="user-name-box dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-              <img src="/image/gizumo_icon_360.jpg">&nbsp;&nbsp;&nbsp;{{ Auth::user()->name }}
+              <img src="/image/gizumo_icon_360.jpg">&nbsp;&nbsp;&nbsp;Gizumo-admin
             </a>
             <ul class="dropdown-menu" role="menu">
               <li>
@@ -69,22 +69,22 @@
       <div class="navbar-collapse collapse">
         <ul class="nav-left-list">
           <li>
-            <a href="{{ route('admin.attendance.index') }}"><i class="fa fa-briefcase">勤怠</i></a>
+            <a href="/admin/attendance"><i class="fa fa-briefcase">勤怠</i></a>
           </li>
           <li>
-            <a href="{{ route('admin.report.index') }}"><i class="fa fa-pencil-square-o">日報</i></a>
+            <a href="/admin/report"><i class="fa fa-pencil-square-o">日報</i></a>
           </li>
           <li>
-            <a href="admin/question/"><i class="fa fa-comments-o">質問掲示板</i></a>
+            <a href="/admin/question"><i class="fa fa-comments-o">質問掲示板</i></a>
           </li>
           <li>
-            <a href="admin/user/"><i class="fa fa-user">ユーザー</i></a>
+            <a href="/admin/user"><i class="fa fa-user">ユーザー</i></a>
           </li>
           <li>
-            <a href="admin/adminuser/"><i class="fa fa-cog">管理ユーザー</i></a>
+            <a href="/admin/adminuser"><i class="fa fa-cog">管理ユーザー</i></a>
           </li>
           <li>
-            <a href="admin/contact/"><i class="fa fa-envelope-o">お問い合わせ</i></a>
+            <a href="/admin/contact"><i class="fa fa-envelope-o">お問い合わせ</i></a>
           </li>
         </ul>
       </div>

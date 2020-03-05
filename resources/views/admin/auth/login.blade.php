@@ -28,7 +28,6 @@
       <img src="/image/GiztechProLogo.png" alt="Giztech Pro" />
       <h2>{{ config('app.name') }} -Admin-</h2>
       {!! Form::open(['route' => 'admin.login']) !!}
-        {{ csrf_field() }}
         <div class="form-wrap">
           <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {!! Form::input('text', 'name', old('name'), ['class' => 'form-control', 'placeholder' => 'Admin user name', 'autocomplete' => 'off']) !!}

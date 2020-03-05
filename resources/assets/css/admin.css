@@ -311,11 +311,6 @@ span.attention {
 
 .right-parts {
   margin: 20px 10px;
-  opacity: .8;
-  color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: #ffbf7f;
   padding: 5px 15px;
 }
 
