@@ -30,8 +30,6 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
 
     Route::get('home', 'UserController@index')->name('home');
 
-    Route::resource('report', DailyReportController::class);
-
     /* 
      * ----------------------------------------------------------
      * 静的なページが簡単に確認できるように ClosureでViewを返しています。処理に応じて編集してください。
