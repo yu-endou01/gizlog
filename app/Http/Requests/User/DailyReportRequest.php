@@ -4,7 +4,7 @@ namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class QuestionsRequest extends FormRequest
+class DailyReportRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,8 @@ class QuestionsRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        // falseの場合、403ステータスコードを返却する
+        return false;
     }
 
     /**
