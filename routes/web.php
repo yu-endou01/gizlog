@@ -11,15 +11,12 @@
 |
  */
 
+// ユーザ側画面
 Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Auth::routes();
 
     Route::get('/', function () {
-        if (Auth::check()) {
-            return redirect()->route('home');
-        } else {
-            return view('user.auth.login');
-        }
+        return redirect()->route('home');
     });
 
     Route::get('slack/login', 'Auth\AuthenticateController@callSlackApi');
@@ -29,30 +26,9 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::get('/register/{query}', 'Auth\RegisterController@showRegistrationForm');
 
     Route::get('home', 'UserController@index')->name('home');
-
-    /* 
-     * ----------------------------------------------------------
-     * 静的なページが簡単に確認できるように ClosureでViewを返しています。処理に応じて編集してください。
-     * 尚、このコメントアウトはコード提出の際は削除してください。
-     */
-    Route::get('attendance', function () {
-        return view('user.attendance.index');
-    });
-    Route::get('attendance/absence', function () {
-        return view('user.attendance.absence');
-    });
-    Route::get('attendance/modify', function () {
-        return view('user.attendance.modify');
-    });
-    Route::get('attendance/mypage', function () {
-        return view('user.attendance.mypage');
-    });
-    /*
-     * ---------------------------------------------------------
-     */
 });
 
-
+// 管理者側画面
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], function() {
     Auth::routes();
 
@@ -106,6 +82,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], fu
 
     Route::post('/register', ['as' => 'register', 'uses' => 'Auth\AdminRegisterController@adminRegister']);
     Route::get('/register/', 'Auth\AdminRegisterController@showAdminRegistrationForm');
-
 });
 
