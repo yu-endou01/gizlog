@@ -45,10 +45,11 @@ class AuthenticateController extends Controller
         }
         $this->users->saveUserInfos($userInstance, $slackUserInfos);
 
-        $loginUser = $this->users->where('slack_user_id', $slackUserInfos->id)->first();
+        $loginUser = $this->users
+                          ->where('slack_user_id', $slackUserInfos->id)
+                          ->first();
         Auth::login($loginUser);
         return redirect('/');
     }
-
 }
 

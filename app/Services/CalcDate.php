@@ -4,10 +4,10 @@ namespace App\Services;
 
 use Carbon;
 
-const START_TIME = '10:00';
-
 class CalcDate
 {
+    const START_TIME = '10:00';
+
     public $today;
 
     public function __construct()
@@ -29,7 +29,8 @@ class CalcDate
         $daySum = 0;
         foreach ($attendanceInfos as $dailyInfo) {
             if (!$dailyInfo->absent_flg && !empty($dailyInfo->end_time)) {
-                $timeDiff = $dailyInfo->start_time->diffInSeconds($dailyInfo->end_time);
+                $timeDiff = $dailyInfo->start_time
+                                      ->diffInSeconds($dailyInfo->end_time);
                 $diffSum = $diffSum + $timeDiff;
                 $daySum++;
             }
@@ -59,10 +60,13 @@ class CalcDate
 
     public function makeDatetimeCarbon($inputs)
     {
-        $inputs['start_time'] = empty($inputs['start_time']) ? null : $this->convertStrToCarbon($inputs['date'].' '.$inputs['start_time']);
-        $inputs['end_time'] = empty($inputs['end_time']) ? null : $this->convertStrToCarbon($inputs['date'].' '.$inputs['end_time']);
+        $inputs['start_time'] = empty($inputs['start_time'])
+                                    ? null
+                                    : $this->convertStrToCarbon($inputs['date'] . ' ' . $inputs['start_time']);
+        $inputs['end_time'] = empty($inputs['end_time'])
+                                    ? null
+                                    : $this->convertStrToCarbon($inputs['date'] . ' ' . $inputs['end_time']);
         return $inputs;
     }
-
 }
 

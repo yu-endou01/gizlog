@@ -8,8 +8,6 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\SlackMessage;
 use Illuminate\Support\Facades\Auth;
 
-
-
 class SlackPosted extends Notification
 {
     use Queueable;
@@ -41,16 +39,16 @@ class SlackPosted extends Notification
      * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
-     public function toSlack($notifiable)
- {
-     return (new SlackMessage)
-         ->success()
-         ->content('質問掲示板')
-         ->attachment(function ($attachment) {
-             $attachment->title(Auth::user()->name)
-                 ->content('新しい質問が投稿されました');
-         });
- }
+    public function toSlack($notifiable)
+    {
+         return (new SlackMessage)
+            ->success()
+            ->content('質問掲示板')
+            ->attachment(function ($attachment) {
+                $attachment->title(Auth::user()->name)
+                           ->content('新しい質問が投稿されました');
+            });
+    }
 
     /**
      * Get the array representation of the notification.
