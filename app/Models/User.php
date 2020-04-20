@@ -2,13 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Attendance;
 use App\Models\DailyReport;
-use DB;
 use Carbon;
+use DB;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -25,7 +25,7 @@ class User extends Authenticatable
         'created_at',
         'updated_at',
         'deleted_at',
-    ];
+    ]; 
 
     protected $hidden = [
         'remember_token',
@@ -68,8 +68,10 @@ class User extends Authenticatable
 
     public function restoreDeletedUser($userInfoId)
     {
-        DB::transaction(function() use($userInfoId) {
-            $this->withTrashed()->where('user_info_id', $userInfoId)->update(['deleted_at' => null]);
+        DB::transaction(function () use ($userInfoId) {
+            $this->withTrashed()
+                 ->where('user_info_id', $userInfoId)
+                 ->update(['deleted_at' => null]);
         });
     }
 }

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Socialite;
+
 class SocialiteManager extends \Laravel\Socialite\SocialiteManager
 {
     protected function createSlackDriver()

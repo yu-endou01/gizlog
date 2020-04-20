@@ -56,6 +56,4 @@ class ResetPasswordController extends Controller
 
         $this->guard()->login($userInfos->user);
     }
-
-
 }

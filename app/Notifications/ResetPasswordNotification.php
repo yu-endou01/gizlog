@@ -40,17 +40,17 @@ class ResetPasswordNotification extends Notification
      */
     public function toMail($notifiable)
     {
-      if($notifiable['attributes']['store_id'] == 0) {
-        $url = 'admin.password.reset';
-      } else {
-        $url = 'password.reset';
-      }
-      return (new MailMessage)
-          ->subject('パスワード再発行')
-          ->greeting('こんにちは')
-          ->line('パスワードを変更するには、以下のリンクをクリックしてください。')
-          ->action('パスワード変更', route($url, $this->token))
-          ->salutation('よろしくお願いします。');
+        if ($notifiable['attributes']['store_id'] == 0) {
+            $url = 'admin.password.reset';
+        } else {
+            $url = 'password.reset';
+        }
+        return (new MailMessage)
+            ->subject('パスワード再発行')
+            ->greeting('こんにちは')
+            ->line('パスワードを変更するには、以下のリンクをクリックしてください。')
+            ->action('パスワード変更', route($url, $this->token))
+            ->salutation('よろしくお願いします。');
     }
 
     /**

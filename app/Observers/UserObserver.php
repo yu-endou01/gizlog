@@ -16,14 +16,14 @@ class UserObserver
      */
     public function updating()
     {
-      $user = new User();
-      $user->notify(new slackPosted());
+        $user = new User();
+        $user->notify(new slackPosted());
     }
 
     public function creating()
     {
-      $user = new User();
-      $user->notify(new slackPosted());
+        $user = new User();
+        $user->notify(new slackPosted());
     }
 
     /**

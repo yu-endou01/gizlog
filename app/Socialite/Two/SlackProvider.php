@@ -8,13 +8,9 @@ use Laravel\Socialite\Two\User;
 
 class SlackProvider extends AbstractProvider implements ProviderInterface
 {
-     public function getScopes()
+    public function getScopes()
     {
         return $this->scopes;
-        if (count($this->scopes) > 0) {
-           return $this->scopes;
-        }
-        return ['identity.basic', 'identity.email', 'identity.team'];
     }
 
     protected function getAuthUrl($state)
@@ -29,11 +25,11 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
 
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get(
-                'https://slack.com/api/users.identity?token='.$token
-            );
+        $response = $this->getHttpClient()
+                         ->get('https://slack.com/api/users.identity?token=' . $token);
         return json_decode($response->getBody(), true);
     }
+
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([

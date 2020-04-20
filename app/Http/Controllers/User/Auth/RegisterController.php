@@ -81,7 +81,8 @@ class RegisterController extends Controller
     protected function showRegistrationForm(Request $request)
     {
         $url = $request->query();
-        $view = !empty($url) ? view('auth.register', compact('url')) : redirect()->route('login');
+        $view = !empty($url) ? view('auth.register', compact('url'))
+                             : redirect()->route('login');
         return $view;
     }
 }

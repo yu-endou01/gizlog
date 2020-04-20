@@ -26,7 +26,7 @@ trait SearchingScope
     public function scopeFilterLike($query, $columnName, $conditionValue)
     {
         if (!empty($conditionValue)) {
-            $query->where($columnName, 'LIKE', '%'.$conditionValue.'%');
+            $query->where($columnName, 'LIKE', '%' . $conditionValue . '%');
         }
     }
 
@@ -41,14 +41,14 @@ trait SearchingScope
     public function scopeFilterDateRange($query, $columnName, $date, $inequality)
     {
         if (!empty($date)) {
-            $query->where($columnName, $inequality, date($date));  
+            $query->where($columnName, $inequality, date($date));
         }
     }
 
     public function scopeFilterRelatedEqual($query, $table, $conditionName, $conditionValue)
     {
         if (!empty($conditionValue)) {
-            $query->whereHas($table, function($query) use ($conditionName, $conditionValue) {
+            $query->whereHas($table, function ($query) use ($conditionName, $conditionValue) {
                 return $query->where($conditionName, $conditionValue);
             });
         }
@@ -57,8 +57,8 @@ trait SearchingScope
     public function scopeFilterRelatedDateRange($query, $table, $date, $inequality)
     {
         if (!empty($date)) {
-            $query->whereHas($table, function($query) use ($date, $inequality) {
-                return $query->where('hire_date', $inequality, date($date));  
+            $query->whereHas($table, function ($query) use ($date, $inequality) {
+                return $query->where('hire_date', $inequality, date($date));
             });
         }
     }

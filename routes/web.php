@@ -29,16 +29,15 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
 });
 
 // 管理者側画面
-Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], function() {
+Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], function () {
     Auth::routes();
-
     Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login', 'uses' => 'Auth\LoginController@login']);
     Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
 
     Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-    /* 
+    /*
      * ----------------------------------------------------------
      * 静的なページが簡単に確認できるように ClosureでViewを返しています。処理に応じて編集してください。
      * 尚、このコメントアウトはコード提出の際は削除してください。
@@ -75,12 +74,26 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], fu
         abort(404);
     });
 
-    Route::post('password/email',['as' => 'password.email', 'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail']);
-    Route::get('password/reset',['as' => 'password.request', 'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm']);
-    Route::post('password/reset', ['as' => 'password.request', 'uses' => 'Auth\ResetPasswordController@reset']);
-    Route::get('password/reset/{token}', ['as' => 'password.reset', 'uses' => 'Auth\ResetPasswordController@showResetForm']);
-
-    Route::post('/register', ['as' => 'register', 'uses' => 'Auth\AdminRegisterController@adminRegister']);
+    Route::post('password/email', [
+        'as' => 'password.email',
+        'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail'
+    ]);
+    Route::get('password/reset', [
+        'as' => 'password.request',
+        'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm'
+    ]);
+    Route::post('password/reset', [
+        'as' => 'password.request',
+        'uses' => 'Auth\ResetPasswordController@reset'
+    ]);
+    Route::get('password/reset/{token}', [
+        'as' => 'password.reset',
+        'uses' => 'Auth\ResetPasswordController@showResetForm'
+    ]);
+    Route::post('/register', [
+        'as' => 'register',
+        'uses' => 'Auth\AdminRegisterController@adminRegister'
+    ]);
     Route::get('/register/', 'Auth\AdminRegisterController@showAdminRegistrationForm');
 });
 
