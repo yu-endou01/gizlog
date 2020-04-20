@@ -11,10 +11,6 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
     public function getScopes()
     {
         return $this->scopes;
-        if (count($this->scopes) > 0) {
-            return $this->scopes;
-        }
-        return ['identity.basic', 'identity.email', 'identity.team'];
     }
 
     protected function getAuthUrl($state)
