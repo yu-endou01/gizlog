@@ -94,6 +94,5 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], fu
         'as' => 'register',
         'uses' => 'Auth\AdminRegisterController@adminRegister'
     ]);
-    Route::get('/register/', 'Auth\AdminRegisterController@showAdminRegistrationForm');
 });
 
