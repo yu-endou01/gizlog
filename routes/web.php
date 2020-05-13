@@ -19,13 +19,21 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
         return redirect()->route('home');
     });
 
+    Route::get('home', 'UserController@index')->name('home');
+
     Route::get('slack/login', 'Auth\AuthenticateController@callSlackApi');
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
 
-    Route::post('/register', 'Auth\RegisterController@register');
-    Route::get('/register/{query}', 'Auth\RegisterController@showRegistrationForm');
+    Route::get('password/reset', function () {
+        abort(404);
+    });
+    Route::get('password/reset/{token}', function () {
+        abort(404);
+    });
+    Route::get('/register', function () {
+        abort(404);
+    });
 
-    Route::get('home', 'UserController@index')->name('home');
 });
 
 // 管理者側画面
@@ -74,25 +82,14 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], fu
         abort(404);
     });
 
-    Route::post('password/email', [
-        'as' => 'password.email',
-        'uses' => 'Auth\ForgotPasswordController@sendResetLinkEmail'
-    ]);
-    Route::get('password/reset', [
-        'as' => 'password.request',
-        'uses' => 'Auth\ForgotPasswordController@showLinkRequestForm'
-    ]);
-    Route::post('password/reset', [
-        'as' => 'password.request',
-        'uses' => 'Auth\ResetPasswordController@reset'
-    ]);
-    Route::get('password/reset/{token}', [
-        'as' => 'password.reset',
-        'uses' => 'Auth\ResetPasswordController@showResetForm'
-    ]);
-    Route::post('/register', [
-        'as' => 'register',
-        'uses' => 'Auth\AdminRegisterController@adminRegister'
-    ]);
+    Route::get('password/reset', function () {
+        abort(404);
+    });
+    Route::get('password/reset/{token}', function () {
+        abort(404);
+    });
+    Route::get('/register', function () {
+        abort(404);
+    });
 });
 
