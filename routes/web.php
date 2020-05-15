@@ -13,8 +13,6 @@
 
 // ユーザ側画面
 Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
-    Auth::routes();
-
     Route::get('/', function () {
         return redirect()->route('home');
     });
@@ -23,22 +21,10 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
 
     Route::get('slack/login', 'Auth\AuthenticateController@callSlackApi');
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
-
-    Route::get('password/reset', function () {
-        abort(404);
-    });
-    Route::get('password/reset/{token}', function () {
-        abort(404);
-    });
-    Route::get('/register', function () {
-        abort(404);
-    });
-
 });
 
 // 管理者側画面
 Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], function () {
-    Auth::routes();
     Route::get('login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
     Route::post('login', ['as' => 'login', 'uses' => 'Auth\LoginController@login']);
     Route::post('logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
@@ -81,15 +67,4 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.' ,'namespace' => 'Admin'], fu
     Route::get('contact', function () {
         abort(404);
     });
-
-    Route::get('password/reset', function () {
-        abort(404);
-    });
-    Route::get('password/reset/{token}', function () {
-        abort(404);
-    });
-    Route::get('/register', function () {
-        abort(404);
-    });
 });
-
