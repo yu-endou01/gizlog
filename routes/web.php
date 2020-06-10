@@ -19,10 +19,10 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
 
     Route::get('home', 'UserController@index')->name('home');
 
-    Route::get(‘login’, ‘Auth\LoginController@showLoginForm’)->name(‘login’);
+    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::get('slack/login', 'Auth\AuthenticateController@callSlackApi');
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
-    Route::post(‘logout’, ‘Auth\LoginController@logout’)->name(‘logout’);
+    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 });
 
 // 管理者側画面
