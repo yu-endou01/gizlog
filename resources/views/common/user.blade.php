@@ -77,6 +77,9 @@
           <li>
             <a href=""><i class="fa fa-comments-o">質問掲示板</i></a>
           </li>
+          <li>
+            <a href=""><i class="fa fa-book">書籍</i></a>
+          </li>
         </ul>
       </div>
     </div>
