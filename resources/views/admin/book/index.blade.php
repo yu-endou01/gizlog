@@ -1,4 +1,4 @@
-@extends ('common.user')
+@extends ('common.admin')
 @section ('content')
 
 <h2 class="brand-header">書籍購入情報一覧</h2>
