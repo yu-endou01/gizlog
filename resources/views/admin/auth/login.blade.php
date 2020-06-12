@@ -47,7 +47,7 @@
         <div class="form-group admin-login-btn">
           {!! Form::button('Login', ['type' => 'submit', 'class' => 'btn']) !!}
           <div class="forget-password-box">
-            <a class="btn-forget" href="{{ route('admin.password.request') }}">Forget the password</a>
+            <a class="btn-forget" href="">Forget the password</a>
           </div>
         </div>
       {!! Form::close() !!}
