@@ -1,4 +1,4 @@
-<div class="form-group has-error">
+<div class="form-group">
   <div class="form-group form-inline">
     <label class="checkbox-inline">
       <input type="checkbox" name="tag_category_id[]" value="" checked="true">
