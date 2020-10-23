@@ -17,5 +17,7 @@
       others
     </label>
   </div>
-  <span class="help-block"></span>
+  <div>
+    <span class="help-block"></span>
+  </div>
 </div>
