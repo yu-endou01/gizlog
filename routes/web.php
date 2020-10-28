@@ -11,7 +11,7 @@
 |
  */
 
-// ユーザ側画面
+// ユーザ側の画面
 Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::get('/', function () {
         return redirect()->route('home');
