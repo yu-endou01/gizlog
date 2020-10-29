@@ -6,7 +6,7 @@
   <div class="container">
     <form>
       <div class="form-group">
-        <select name='tag_category_id' class = "form-control selectpicker form-size-small">
+        <select name='tag_category_id' class="form-control selectpicker form-size-small">
           <option value="">Select category</option>
             <option value= ""></option>
         </select>
