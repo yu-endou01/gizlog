@@ -55,17 +55,4 @@ class Task extends Model
         $task->fill($attributes);
         $task->save();
     }
-
-    /**
-     * 指定のIDでタスクを一件削除
-     *
-     * @param integer $id
-     * @return void
-     * @throws ModelNotFoundException
-     */
-    public function deleteById($id)
-    {
-        $task = $this->findOrFail($id);
-        $task->delete();
-    }
 }
