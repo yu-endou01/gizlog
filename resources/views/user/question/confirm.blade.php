@@ -24,7 +24,6 @@
   </div>
   <div class="btn-bottom-wrapper">
     <form>
-      <input name="user_id" type="hidden" value="">
       <input name="tag_category_id" type="hidden" value="">
       <input name="title" type="hidden" value="">
       <input name="content" type="hidden" value="">

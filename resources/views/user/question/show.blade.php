@@ -36,7 +36,6 @@
     </div>
   <div class="comment-box">
     <form>
-      <input name="user_id" type="hidden" value="">
       <input name="question_id" type="hidden" value="">
       <div class="comment-title">
         <img src="" class="avatar-img"><p>コメントを投稿する</p>
