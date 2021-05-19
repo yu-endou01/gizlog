@@ -13,7 +13,7 @@
     </div>
   </div>
   <div class="button-holder">
-      <a class="button start-btn" id="register-attendance" href=#openModal>出社時間登録</a>
+    <a class="button start-btn" id="register-attendance" href=#openModal>出社時間登録</a>
   </div>
   <ul class="button-wrap">
     <li>
