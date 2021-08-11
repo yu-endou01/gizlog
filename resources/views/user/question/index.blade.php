@@ -13,6 +13,9 @@
       <a class="btn" href="">
         <i class="fa fa-user" aria-hidden="true"></i>
       </a>
+      <a class="btn" href="">
+        <i class="fa fa-trophy" aria-hidden="true"></i>
+      </a>
     </div>
     <div class="category-wrap">
       <div class="btn all" id="0">all</div>
