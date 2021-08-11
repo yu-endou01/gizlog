@@ -117,6 +117,21 @@ $(function(){
 
   })();
 
+  //コメントいいね機能
+  let like = $('.like-toggle');
+  like.on('click', function () {
+    $.ajax({
+    })
+    .done(function (data) {
+      if (data) {
+        like.toggleClass('liked');
+      } else {
+        alert('リクエストに失敗しました。');
+      }
+    })
+    .fail(function () {
+    });
+  });
 
 });
 

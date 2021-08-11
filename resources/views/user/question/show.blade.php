@@ -24,16 +24,22 @@
       </table>
     </div>
   </div>
-    <div class="comment-list">
-        <div class="comment-wrap">
+  <div class="comment-list">
+      <div class="comment-wrap">
+
+        <div class="inline-flex">
           <div class="comment-title">
             <img src="" class="avatar-img">
             <p></p>
             <p class="comment-date"></p>
           </div>
-          <div class="comment-body"></div>
+          <span class="likes">
+            <i class="fa fa-thumbs-up like-toggle"></i>
+          </span>
         </div>
-    </div>
+        <div class="comment-body"></div>
+      </div>
+  </div>
   <div class="comment-box">
     <form>
       <input name="question_id" type="hidden" value="">
