@@ -343,6 +343,10 @@ span.attention {
 }
 
 
+.dailyreport-wrapper {
+  display: inline-flex;
+}
 
-
-
+.sort-btn {
+  padding: 8px;
+}
