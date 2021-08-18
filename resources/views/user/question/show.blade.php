@@ -33,9 +33,6 @@
             <p></p>
             <p class="comment-date"></p>
           </div>
-          <span class="likes">
-            <i class="fa fa-thumbs-up like-toggle"></i>
-          </span>
         </div>
         <div class="comment-body"></div>
       </div>
