@@ -1142,5 +1142,20 @@ form.user-search {
   border-radius: 50%;
 }
 
+.liked {
+  color: #32EEFF;
+}
 
+.likes {
+  font-size: 30px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  color:#C2EEFF;
+  cursor: pointer;
+}
+
+.inline-flex {
+  display:inline-flex;
+  align-items: center;
+}
 
