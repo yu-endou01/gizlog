@@ -13,7 +13,7 @@ class SlackProvider extends AbstractProvider implements ProviderInterface
         return $this->scopes;
     }
 
-    protected function getAuthUrl($state)
+    public function getAuthUrl($state)
     {
         return $this->buildAuthUrlFromBase('https://slack.com/oauth/authorize', $state);
     }
