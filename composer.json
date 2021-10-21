@@ -11,9 +11,9 @@
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "2.3.*",
-        "laravel/framework": "6.0.*",
+        "laravel/framework": "6.20.35",
         "laravel/helpers": "^1.4",
-        "laravel/socialite": "^6.0",
+        "laravel/socialite": "^4.0",
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.0"
     },
