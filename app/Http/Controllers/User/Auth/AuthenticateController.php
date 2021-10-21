@@ -37,7 +37,7 @@ class AuthenticateController extends Controller
             return redirect('/');
         };
 
-        $slackUserInfos = Socialite::with('slack')->user();
+        $slackUserInfos = Socialite::with('slack')->stateless()->user();
         $userInstance = $this->users->createUserInstance($slackUserInfos->id);
 
         if ($userInstance['deleted_at'] !== null) {
