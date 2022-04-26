@@ -133,5 +133,19 @@ $(function(){
     });
   });
 
+  // 質問掲示板マイページ削除機能
+  $('.question-delete-button').on('click', function(e) {
+    e.preventDefault();
+    const type = $(this).parent().children('input[type="method"]').attr('method');
+    const url = $(this).parent().attr('action');
+    $.ajax({
+      type,
+      url
+    })
+    .done(function () {
+      $(this).parent.remove();
+    })
+  });
+
 });
 
