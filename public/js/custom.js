@@ -140,10 +140,11 @@ $(function(){
     const url = $(this).parent().attr('action');
     $.ajax({
       type,
-      url
+      url,
+      context : this, // done以降で$(this)を使うため
     })
     .done(function () {
-      $(this).parent.remove();
+      $(this).parents('.row').remove();
     })
   });
 
