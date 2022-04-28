@@ -30,7 +30,7 @@
           </td>
           <td class="col-xs-1">
             <form>
-              <button class="btn btn-danger question-delete-button" type="submit">
+              <button class="btn btn-danger" type="submit">
                 <i class="fa fa-trash-o" aria-hidden="true"></i>
               </button>
             </form>
