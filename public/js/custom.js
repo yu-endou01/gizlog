@@ -135,16 +135,16 @@ $(function(){
 
   // 質問掲示板マイページ削除機能
   $('.question-delete-button').on('click', function(e) {
+    const selectedSelector = $(this);
     e.preventDefault();
     const url = $(this).parent().attr('action');
     const methodType = $(this).prev('input[type="method"]').attr('method');
     $.ajax({
       url: url,
       type: methodType,
-      context : this, // done以降で$(this)を使うため
     })
     .done(function () {
-      $(this).parents('.row').remove(); // 該当レコードを削除
+      selectedSelector.parents('.row').remove(); // 該当レコードを削除
     })
   });
 
