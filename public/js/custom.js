@@ -144,7 +144,7 @@ $(function(){
       context : this, // done以降で$(this)を使うため
     })
     .done(function () {
-      $(this).parents('.row').remove();
+      $(this).parents('.row').remove(); // 該当レコードを削除
     })
   });
 
