@@ -136,7 +136,7 @@ $(function(){
   // 質問掲示板マイページ削除機能
   $('.question-delete-button').on('click', function(e) {
     e.preventDefault();
-    const selectedSelector = $(this);
+    const $this = $(this);
     const url = $(this).parent().attr('action');
     const methodType = $(this).prev('input[type="method"]').attr('method');
     $.ajax({
@@ -144,8 +144,8 @@ $(function(){
       type: methodType,
     })
     .done(function () {
-      selectedSelector.parents('.row').remove(); // 該当レコードを削除
-    })  
+      $this.parents('.row').remove(); // 削除ボタンが押された該当のtrタグをDOMから削除
+    })
   });
 
 });
