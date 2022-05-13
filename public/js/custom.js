@@ -137,8 +137,8 @@ $(function(){
   $('.question-delete-button').on('click', function(e) {
     e.preventDefault();
     const $this = $(this);
-    const url = $(this).parent().attr('action');
-    const methodType = $(this).prev('input[type="method"]').attr('method');
+    const url = $this.parent().attr('action');
+    const methodType = $this.prev('input[type="method"]').attr('method');
     $.ajax({
       url: url,
       type: methodType,
