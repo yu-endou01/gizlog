@@ -133,5 +133,20 @@ $(function(){
     });
   });
 
+  // 質問掲示板マイページ削除機能
+  $('.question-delete-button').on('click', function(e) {
+    e.preventDefault();
+    const $this = $(this);
+    const url = $this.parent().attr('action');
+    const methodType = $this.prev('input[type="method"]').attr('method');
+    $.ajax({
+      url: url,
+      type: methodType,
+    })
+    .done(function () {
+      $this.parents('.row').remove(); // 削除ボタンが押された該当のtrタグをDOMから削除
+    })
+  });
+
 });
 
