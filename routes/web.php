@@ -25,7 +25,7 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
     Route::group(['prefix' => 'report', 'report.'], function () {
-        Route::get('create', 'DailyReportController@create');
+        Route::get('create', 'DailyReportController@create')->name('report.create');
     });
 });
 
