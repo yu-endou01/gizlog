@@ -14,4 +14,9 @@ class DailyReportController extends Controller
     {
         $this->dailyReport = $dailyReport;
     }
+
+    public function create()
+    {
+        return view('user.daily_report.create');
+    }
 }
