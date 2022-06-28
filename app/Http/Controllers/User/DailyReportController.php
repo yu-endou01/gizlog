@@ -13,6 +13,7 @@ class DailyReportController extends Controller
 
     public function __construct(DailyReport $dailyReport)
     {
+        $this->middleware('auth');
         $this->dailyReport = $dailyReport;
     }
 
