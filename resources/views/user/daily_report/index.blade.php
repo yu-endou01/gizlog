@@ -32,6 +32,7 @@
         @endforeach
       </tbody>
     </table>
+    <div style="text-align:center">{{ $dailyReports->links() }}</div>
   </div>
 </div>
 

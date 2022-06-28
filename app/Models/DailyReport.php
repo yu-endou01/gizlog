@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DailyReport extends Model
 {
+    public $perPage = 10;
+
     protected $fillable = [
         'reporting_time',
         'content',

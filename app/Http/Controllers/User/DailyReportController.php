@@ -19,7 +19,10 @@ class DailyReportController extends Controller
 
     public function index()
     {
-        $dailyReports = $this->dailyReport->all();
+        $dailyReports = $this
+            ->dailyReport
+            ->orderByDesc('reporting_time')
+            ->paginate();
         return view('user.daily_report.index', compact('dailyReports'));
     }
 
