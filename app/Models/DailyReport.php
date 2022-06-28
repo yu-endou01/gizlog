@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class DailyReport extends Model
 {
+    use SoftDeletes;
+
     public $perPage = 10;
 
     protected $fillable = [
