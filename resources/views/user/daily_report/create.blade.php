@@ -4,7 +4,7 @@
 <h2 class="brand-header">日報作成</h2>
 <div class="main-wrap">
   <div class="container">
-    {{ Form::open(['method' => 'POST']) }}
+    {{ Form::open(['route' => 'report.store', 'method' => 'POST']) }}
       <div class="form-group form-size-small has-error">
         {{ Form::date('reporting_time', null, ['class' => 'form-control']) }}
         <span class="help-block"></span>
