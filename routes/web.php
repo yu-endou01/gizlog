@@ -24,12 +24,12 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-    Route::group(['prefix' => 'report', 'report.'], function () {
-        Route::get('/', 'DailyReportController@index')->name('report.index');
-        Route::get('/create', 'DailyReportController@create')->name('report.create');
-        Route::post('/store', 'DailyReportController@store')->name('report.store');
-        Route::get('/{id}', 'DailyReportController@show')->name('report.show');
-        Route::delete('/{id}', 'DailyReportController@delete')->name('report.delete');
+    Route::group(['prefix' => 'report',  'as' => 'report.'], function () {
+        Route::get('/', 'DailyReportController@index')->name('index');
+        Route::get('/create', 'DailyReportController@create')->name('create');
+        Route::post('/store', 'DailyReportController@store')->name('store');
+        Route::get('/{id}', 'DailyReportController@show')->name('show');
+        Route::delete('/{id}', 'DailyReportController@delete')->name('delete');
     });
 });
 
