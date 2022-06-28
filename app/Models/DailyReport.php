@@ -12,6 +12,10 @@ class DailyReport extends Model
         'title',
     ];
 
+    protected $dates = [
+        'reporting_time'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class);
