@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        @foreach($dailyReports as $dailyReport)
+        @foreach ($dailyReports as $dailyReport)
           <tr class="row">
             <td class="col-xs-2">{{ $dailyReport->reporting_time->format('m/d（D）') }}</td>
             <td class="col-xs-3">{{ str_limit($dailyReport->title, 30) }}</td>
