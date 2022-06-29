@@ -24,7 +24,7 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-    Route::group(['prefix' => 'report',  'as' => 'report.'], function () {
+    Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
         Route::get('/', 'DailyReportController@index')->name('index');
         Route::get('/create', 'DailyReportController@create')->name('create');
         Route::post('/store', 'DailyReportController@store')->name('store');
