@@ -9,7 +9,7 @@ class DailyReport extends Model
 {
     use SoftDeletes;
 
-    public $perPage = 10;
+    protected $perPage = 10;
 
     protected $fillable = [
         'reporting_time',
