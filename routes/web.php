@@ -23,6 +23,14 @@ Route::group(['prefix' => '/', 'user.', 'namespace' => 'User'], function () {
     Route::get('slack/login', 'Auth\AuthenticateController@callSlackApi');
     Route::get('callback', 'Auth\AuthenticateController@loginBySlackUserInfo');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+    Route::group(['prefix' => 'report', 'as' => 'report.'], function () {
+        Route::get('/', 'DailyReportController@index')->name('index');
+        Route::get('/create', 'DailyReportController@create')->name('create');
+        Route::post('/store', 'DailyReportController@store')->name('store');
+        Route::get('/{id}', 'DailyReportController@show')->name('show');
+        Route::delete('/{id}', 'DailyReportController@delete')->name('delete');
+    });
 });
 
 // 管理者側画面

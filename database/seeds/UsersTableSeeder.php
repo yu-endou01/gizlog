@@ -7,6 +7,7 @@ class UsersTableSeeder extends Seeder
 {
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         DB::table('users')->truncate();
         DB::table('users')->insert([
             [
@@ -31,6 +32,7 @@ class UsersTableSeeder extends Seeder
                 'created_at'    => Carbon::create(2017, 7, 16),
             ]
         ]);
+        Schema::enableForeignKeyConstraints();
     }
 }
 
