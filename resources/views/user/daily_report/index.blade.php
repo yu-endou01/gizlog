@@ -6,7 +6,7 @@
   <div class="btn-wrapper daily-report">
     {{--  TODO 日報検索機能  --}}
     <form>
-      <input type="text" class="form-control">
+      <input type="month" class="form-control">
       <button type="submit" class="btn btn-icon"><i class="fa fa-search"></i></button>
     </form>
     <a class="btn btn-icon" href="{{ route('report.create') }}"><i class="fa fa-plus"></i></a>
